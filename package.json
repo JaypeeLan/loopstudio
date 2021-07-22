@@ -1,0 +1,11 @@
+{
+  "name": "scss",
+  "version": "1.35.2",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch scss/styles.scss:css/styles.css"
+  },
+  "author": "",
+  "license": "ISC"
+}

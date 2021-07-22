@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@1,200&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  font-size: 15px;
+  font-family: "Alata", "Josefin Sans", sans-serif;
+  width: 960px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+#nav-page {
+  background-image: url(../images/mobile/image-hero.jpg);
+  background-size: cover;
+  height: 100vh;
+}
+#nav-page.active {
+  background: #000;
+}
+#nav-page .page_text {
+  width: max(290px, 40%);
+  margin-left: 5%;
+  margin-top: 35%;
+  border: 2px solid white;
+  padding: 1rem 0.8rem 1rem 1rem;
+}
+#nav-page .page_text p {
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 2rem;
+}
+.nav img {
+  margin-left: 1rem;
+}
+
+.menu_links {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  right: 0%;
+  padding-top: 6rem;
+  padding-left: 1.5rem;
+  opacity: 0;
+  background: #000;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+.menu_links li {
+  margin-bottom: 2rem;
+}
+.menu_links a {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+}
+.menu_links.active {
+  opacity: 1;
+  height: 90vh;
+}
+
+.mobile-toggle .bar {
+  background-color: #fff;
+  height: 3px;
+  width: 25px;
+  display: block;
+  margin-bottom: 5px;
+  margin-right: 2rem;
+}
+
+@media screen and (min-width: 760px) {
+  .menu_links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    position: initial;
+    padding-right: 4rem;
+    justify-content: space-between;
+    padding-top: 0;
+    opacity: 1;
+    background: none;
+  }
+  .menu_links li {
+    margin-bottom: 0rem;
+    margin-left: 1rem;
+  }
+  .menu_links a {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    color: #fff;
+  }
+
+  .mobile-toggle {
+    display: none;
+  }
+
+  #nav-page {
+    background-image: url(../images/desktop/image-hero.jpg);
+    background-size: cover;
+  }
+  #nav-page .page_text {
+    width: 350px;
+    margin-left: 50px;
+    margin-top: 200px;
+    border: 2px solid white;
+    padding: 1rem 1rem 2rem 1.5rem;
+  }
+  #nav-page .page_text p {
+    text-transform: uppercase;
+    color: white;
+    font-size: 2.6rem;
+    font-weight: 300;
+  }
+
+  .nav img {
+    padding-left: 2rem;
+  }
+
+  .main {
+    padding-top: 200px;
+  }
+  .main_creations h1 {
+    text-align: start !important;
+    padding-left: 0 !important;
+  }
+  .main_creations-link {
+    display: none;
+  }
+  .main_projectss {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+  }
+  .main_about {
+    width: 100%;
+  }
+  .main_about img {
+    width: min(500px, 100%);
+  }
+  .main_about_details {
+    background: white;
+    padding: 2rem;
+    margin-left: 400px;
+    margin-top: -200px;
+    width: max(350px, 400px);
+    position: sticky;
+  }
+  .main_projects div {
+    padding-left: 2% !important;
+  }
+  .main_projects p {
+    font-size: 1.3rem !important;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    flex-direction: row !important;
+    justify-content: space-around;
+  }
+  .footer_details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+  .footer_details li + li {
+    margin-left: 10px;
+  }
+  .footer:nth-child(odd) {
+    text-align: start;
+  }
+  .footer_icons {
+    text-align: end;
+  }
+  .footer p {
+    margin-top: 2rem;
+  }
+}
+main {
+  background-color: white;
+}
+
+.main {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding-top: 10vh;
+  padding-bottom: 4rem;
+}
+.main_about h1 {
+  padding-top: 2rem;
+  padding-bottom: 1.2rem;
+  font-size: 2rem;
+}
+.main_about p {
+  color: dimgray;
+  width: 600px;
+  max-width: 100%;
+}
+.main_creations {
+  margin-top: 6rem;
+  text-align: center;
+}
+.main_creations h1 {
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
+}
+.main_creations-link {
+  border: 3px solid dimgray;
+  text-align: center;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+.main_creations-link a {
+  color: black;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+.main_projects {
+  margin-bottom: 20px;
+}
+.main_projects div {
+  position: absolute;
+  margin-top: -65px;
+  padding-left: 10%;
+  text-align: start;
+}
+.main_projects p {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.footer {
+  background: black;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 2rem;
+}
+.footer > * {
+  margin-top: 2rem;
+}
+.footer_details {
+  margin-top: 1rem;
+}
+.footer_details > li {
+  margin-bottom: 1rem;
+}
+.footer_icons {
+  margin-bottom: 1rem;
+}
+.footer_icons > * {
+  margin-left: 1rem;
+}
+.footer p {
+  color: dimgray;
+}
+
+/*# sourceMappingURL=styles.css.map */

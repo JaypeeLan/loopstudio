@@ -1,0 +1,169 @@
+//variables
+//Declaring a var
+$VarName: value;
+
+//using a variable
+// selector: $VarName;
+
+//place holder for declaring Id or class Variable to concat them or use them as sepearate values
+#{VarName} for html tags
+##{VarName} for id
+.#{Varname} for classes
+
+//example
+.div .#{VarName}{
+    background:value;
+}
+
+//mixin
+@mixin mixinName($prop1, $prop2){
+    width: $prop1;
+    height: $prop2;
+    color: yellowgreen;
+    border: 20px;
+    border-radius: 50%;
+}
+
+//variables can also be passed as arguments in mixin
+.divcontainer{
+    @include mixinName(200px, 150px);
+    background: white;
+}
+
+.divcontainer2{
+    @include mixinName(150px, 180px)
+}
+
+//extend
+%extendName {
+    width: auto;
+    height: 200px;
+    font-size: 2rem;
+}
+
+.divcontainer{
+    @extend %extendName
+}
+
+// list functions
+.div{
+    background: length($VarName);
+    background: nth($VarName, indexOfChild);
+    background: set-nth($VarName, indexOfChild, newValue);
+    background: join($VarName1, $VarName2, commaORspace);
+    background: append($VarName1, valuetoappend, commaORspace);
+    background: zip(value, value, value);
+}
+
+//mapping
+.div{
+    content: map-values($map);
+}
+
+//loop
+
+//you can create variable in loop functions
+@for $var from 1 to 6 {
+    h#{$VarName}{font-size: 20px}    
+}
+
+// to use nth list funtion
+// @for $var from start to end {
+//     #{ nth{ $headers, $var}}{
+//         font-size: nth($fontSize, $i);
+//         margin: nth($fontSize, $i);
+//     }
+// }
+
+///each loop
+
+@each $var, $font, $color in (h1, 55px, blue), 
+                             (h2, 50px, green) {
+            #{$Var} {
+                font-size: $font;
+            }
+        }
+
+//a map var can be used in the place of the value in the each loop
+$noOfgrids : 100% / $i;
+
+$total:16;
+
+// @for $i from 1 to $total {
+
+//     $noOfgrids : 100% / $i ;
+
+//     #grid.cell-#($i) > div {
+//         width: $noOfgrids;
+//     }
+// }
+
+$map: (
+    1060:8,
+    860:4,
+    580:2
+);
+
+// @each $width, $grids in $map {
+     
+//         @media screen and (max-width: $width + px){
+
+//             @for $i from 1 to $grids {
+//                 $noOfgrids : 100% / $i ;
+//                 #grid.cell-#($width)-#($grids) > div {
+//                     width: $noOfgrids;
+//                 }
+//             }
+//         }
+    
+// }
+
+
+
+//while loop
+
+@while condition {
+    #{$VarName} {
+        font-size: $font;
+    }
+    $VarName: $VarName + 1;
+}
+
+// grid formular
+
+@mixin grid($cols, $margins){
+    float: left;
+    margin-right: $margins;
+    margin-bottom: $margins;
+    width: ((100% - (($cols - 1) * $margins)) / $cols );
+    &:nth-child(#{$cols}n){
+        margin-right: 0;
+    }
+}
+
+// media query formula
+@mixin mq($widthpx) {
+    @media screen and (min-width: $widthpx) {
+        @content
+    }
+}
+
+
+// for more than one media query 
+@mixin mQ($widthpx...){
+    @if length($list: ($widthpx) == 1){
+        @media screen and (min-width: nth($list:$widthpx, $n:1)){
+            @content
+        }
+    }
+    @if length($list: ($widthpx) == 2){
+        @media screen and (min-width: nth($list:$widthpx, $n:1)) and (max-width: nth($list:$widthpx, $n:2)) {
+            @content
+        }
+    }
+
+}
+
+// content are like mixins and are used the same way.
+// declare a rule and use the @content keyword then include
+// while passing arguments

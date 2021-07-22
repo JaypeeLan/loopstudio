@@ -1,0 +1,71 @@
+#nav-page{
+    background-image: url(../images/mobile/image-hero.jpg);
+    background-size: cover;
+    height: 100vh;
+    &.active{
+        background: #000
+    }
+    .page_text{
+        width: max(290px, 40%);
+        margin-left: 5%;
+        margin-top: 35%;
+        border: 2px solid $pry-white;
+        padding: 1rem 0.8rem 1rem 1rem;
+        p{
+            text-transform: uppercase;
+            color: $pry-white;
+            font-size: 1.8rem;
+            font-weight: 300;
+        }
+    }
+}
+
+.nav{
+    @include flex;
+    @include center;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 2rem;
+
+    img{
+        margin-left: 1rem;
+    }
+}
+
+.menu_links{
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    right: 0%;
+    padding-top: 6rem;
+    padding-left: 1.5rem;
+    opacity: 0;
+    background: #000;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+
+    li{
+        margin-bottom: 2rem;
+    }
+
+    a{
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1.5rem;        
+    }
+
+    &.active{
+        opacity: 1;
+        height: 90vh;
+    }
+}
+
+
+.mobile-toggle .bar{
+    background-color:#fff;
+    height: 3px;
+    width: 25px;
+    display: block;
+    margin-bottom: 5px;
+    margin-right: 2rem;   
+}

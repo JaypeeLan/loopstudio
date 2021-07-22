@@ -1,0 +1,116 @@
+@import "mixins";
+@import "reset";
+@import "nav";
+@import "responsive";
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@1,200&display=swap');
+
+
+// nav page
+
+
+//main
+main{
+    background-color: $pry-white;
+}
+
+.main{
+    @include center;
+    width: 80%;
+    padding-top: 10vh;
+    padding-bottom: 4rem;
+
+    &_about{
+        
+        h1{
+            padding-top: 2rem;
+            padding-bottom: 1.2rem;
+            font-size: 2rem;
+        }
+
+        p{
+            color: $pry-dark;
+            width: 600px;
+            max-width: 100%;
+            // @include center;
+        }
+    }
+
+    &_creations{
+        margin-top: 6rem;
+        text-align: center;
+
+        h1{
+            text-align: center;           
+            font-size: 2rem;
+            padding: 1rem;
+        }
+
+        &-link{
+            border: 3px solid $pry-dark;
+            text-align: center;
+            padding: 0.5rem 1rem 0.5rem 1rem;
+            width: 60%;
+            @include center;
+            margin-top: 2rem;
+
+            a{
+                color: $pry-black;
+                text-transform: uppercase;
+                letter-spacing: 0.3rem;
+            }
+
+        }
+    
+    }
+
+    &_projects{
+        margin-bottom: 20px;
+       
+
+        div{
+            position: absolute;
+            margin-top: -65px;
+            padding-left: 10%;
+            text-align: start;
+        }
+
+        p{
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            color: $pry-white;                       
+        }
+
+    }
+}
+
+// footer
+.footer{
+    background: $pry-black;
+    @include flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 2rem;
+
+    > *{
+        margin-top: 2rem;
+    }
+
+    &_details{
+        margin-top: 1rem;
+        > li{
+        margin-bottom: 1rem;
+            }
+    }
+
+    &_icons{
+        margin-bottom: 1rem;
+        > * {
+            margin-left: 1rem;
+        }
+    }
+
+    p{
+        color: $pry-dark;
+    }
+}

@@ -1,0 +1,147 @@
+@include lgscreen{
+// landing page
+
+//navigation
+
+    .menu_links{
+        list-style: none;
+        @include flex;
+        position: initial;
+        padding-right: 4rem;
+        justify-content: space-between;
+        padding-top: 0;
+        opacity: 1;
+        background: none;
+        li{
+            margin-bottom: 0rem;
+            margin-left: 1rem;
+        }
+    
+        a{
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 1rem;     
+            color: #fff;   
+        }
+    
+    }
+        
+    .mobile-toggle {
+        display: none;        
+    }
+
+    //---------------------------//
+
+    #nav-page{
+            background-image: url(../images/desktop/image-hero.jpg);
+            background-size: cover;
+
+        .page_text{
+            width: 350px;
+            margin-left: 50px;
+            margin-top: 200px;
+            border: 2px solid $pry-white;
+            padding: 1rem 1rem 2rem 1.5rem;
+            p{
+                text-transform: uppercase;
+                color: $pry-white;
+                font-size: 2.6rem;
+                font-weight: 300;
+            }
+        }
+    }
+
+    .nav{
+        img{
+            padding-left: 2rem;
+        }
+    }
+
+    // About section
+    .main{
+        padding-top: 200px;
+
+        &_creations{
+            h1{
+                text-align: start !important;
+                padding-left: 0 !important;
+            }
+
+        &-link {
+            display: none;
+    
+            }
+        }
+
+        &_projectss{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 10px;
+        }
+
+        &_about{
+            width: 100%;
+
+            img{
+                width: min(500px, 100%);
+            }
+
+            &_details{
+                background: $pry-white;
+                padding: 2rem;
+                margin-left: 400px;
+                margin-top: -200px;
+                width: max(350px, 400px);
+                position: sticky;
+            }
+        }
+
+        &_projects{
+           
+            div{
+             
+                padding-left: 2% !important;
+                
+            }
+    
+            p{
+            
+                font-size: 1.3rem !important;                    
+            }
+    
+        }
+    
+
+     }
+
+    // foooter
+
+    .footer{
+        @include flex;
+        flex-direction: row !important;
+        justify-content: space-around;
+
+        &_details{
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+
+            li + li{
+                margin-left: 10px;
+            }
+        }
+
+        &:nth-child(odd) {
+            text-align: start;
+        }
+
+        &_icons{
+            text-align: end;
+        }
+
+        p{
+            margin-top: 2rem;
+        }
+    }
+    
+}

@@ -1,0 +1,40 @@
+$pry-white: hsl(0, 0%, 100%);
+$pry-black: hsl(0, 0%, 0%);
+$pry-gray: hsl(0, 0%, 55%);
+$pry-dark: hsl(0, 0%, 41%);
+$font-size: 15px;
+$font-weight: 400;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: $pry-black;
+    font-size: $font-size;
+    font-family: 'Alata', 'Josefin Sans', sans-serif;
+    width: 960px;
+    max-width: 100%;
+    margin: 0 auto;
+    
+}
+
+h1{
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: $pry-white;
+}
+
+ul{
+    list-style: none;
+}

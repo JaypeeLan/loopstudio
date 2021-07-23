@@ -102,6 +102,16 @@ ul {
   margin-right: 2rem;
 }
 
+#mobileNav.is-active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#mobileNav.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+#mobileNav.is-active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
 @media screen and (min-width: 760px) {
   .menu_links {
     list-style: none;
